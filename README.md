@@ -37,3 +37,5 @@ O jogo ocorrera de forma ciclica da seguinte maneira:
 ######  Fase final 
     Caso o jogador do turno tenha mais que 5(cinco) cartas na mão devera descartar cartas para o cemitério até ter 5 
     cartas na mão.   
+## Definição de objetos de software
+   Cada carta sera um objeto e tera quatro atributos: nome da carta,poder de luta , efeito e descrição.
