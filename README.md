@@ -1,4 +1,4 @@
-# Jogo de cartas génerico 2021
+# Monstros de duelo
 ## Ideia base
     Criar um jogo de cartas em C++,utilizando paradigma de programação orientada a objetos visando 
     aprovação na disciplina de Programação orientada a objetos.
