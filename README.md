@@ -28,7 +28,7 @@ O jogo ocorrera de forma ciclica da seguinte maneira:
 ######  Fase principal
     Nesta fase o jogador do turno podera realizar 2 tipos de ações:
       1º)Colocar um monstro em campo,só podera colocar um monstro no campo por turno com o máximo 5 monstros no campo ;
-      2º)Ativar efeitos de monstros,não a limites de quantos efeitos poderam ser ativanos no mesmo turno ;
+      2º)Ativar efeitos de monstros,não a limites de quantos efeitos poderam ser ativados no mesmo turno ;
 ######  Fase de batalha
       Nesta fase o jogador do turno pode escolher qual monstro atacara,todos os monstros poderam atacar uma vez cada,
     se o oponte não tiver monstros em campo o ataque sera direto ao pontos de vida do oponente. Caso haja um montro então 
