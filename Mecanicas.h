@@ -13,7 +13,7 @@
 class Mecanicas {
 public:
 	Mecanicas();
-	void duelo(Deck * _baralho);
+	void duelo(Deck *_baralhoA, Deck *_baralhoB,int A,int B);
 	virtual ~Mecanicas();
 };
 

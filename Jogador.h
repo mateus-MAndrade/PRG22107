@@ -21,6 +21,7 @@ public:
 
 	void printMao(){ _mao.print(); }
 	void printCampo(){ _campo.print(); }
+	carta* removeCampo(){_campo.remove(int pos);}
 
 
 private:

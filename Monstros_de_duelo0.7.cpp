@@ -1,7 +1,7 @@
 //==================================================================
 // Name        : Monstros_de_duelo.cpp
 // Author      : Mateus Martins de Andrade
-// Version     : 0.5
+// Version     : 0.7
 // Copyright   :
 // Description : Hello World in C++, Ansi-style
 //============================================================================
@@ -14,45 +14,63 @@ using namespace std;
 
 int main() {
 
-	Deck _baralho;
-	_baralho.add(new Carta("Goblin vermelho", 1, "Conhecidos por morar em cavernas prÛximas ao deserto"));
-	_baralho.add(new Carta("Guerreiro novato", 2, "Ainda esta em treinamento"));
-	_baralho.add(new Carta("Guerreiro orgulhoso", 2, "vermes malditos!"));
-	_baralho.add(new Carta("Goblin b·rbaro", 2, "ainda n„o domesticado"));
-	_baralho.add(new Carta("Goblin vermelho", 1, "Conhecidos por morar em cavernas prÛximas ao deserto"));
-	_baralho.add(new Carta("Guerreiro novato", 2, "Ainda esta em treinamento"));
-	_baralho.add(new Carta("Guerreiro orgulhoso", 2, "vermes malditos!"));
-	_baralho.add(new Carta("Goblin b·rbaro", 2, "ainda n„o domesticado"));
-	_baralho.add(new Carta("Goblin vermelho", 1, "Conhecidos por morar em cavernas prÛximas ao deserto"));
-	_baralho.add(new Carta("Guerreiro novato", 2, "Ainda esta em treinamento"));
-	_baralho.add(new Carta("Guerreiro orgulhoso", 2, "vermes malditos!"));
-	_baralho.add(new Carta("Goblin b·rbaro", 2, "ainda n„o domesticado"));
-	_baralho.shuffle();
+	Deck _baralhoA;
+	Deck _baralhoB;
 
-	_baralho.print();
+	_baralhoA.add(new Carta("Goblin vermelho", 1, "Conhecidos por morar em cavernas prÔøΩximas ao deserto"));
+	_baralhoA.add(new Carta("Goblin Verde", 2, "vive nos pantanos"));
+	_baralhoA.add(new Carta("Goblin Cinza", 2, "vive pr√≥ximo a vulc√µes"));
+	_baralhoA.add(new Carta("Goblin b√°rbaro", 2, "ainda n√£o domesticado"));
+	_baralhoA.add(new Carta("Goblin azul", 1, "Conhecidos por morar em cavernas pr√≥ximas ao mar"));
+	_baralhoA.add(new Carta("Guerreiro novato", 2, "Ainda esta em treinamento"));
+	_baralhoA.add(new Carta("Guerreiro orgulhoso", 2, "vermes malditos!"));
+	_baralhoA.add(new Carta("Guerreiro Honrado", 3, "Carrega o nome da fam√≠lia"));
+	_baralhoA.add(new Carta("Guerreirove do deserto", 1, "Conhecidos por morar no deserto"));
+	_baralhoA.add(new Carta("Guerreiro experiente", 4, "Possui anos de experi√™ncia"));
+	_baralhoA.add(new Carta("Paladino negro", 5, "Um paladino corrompido pelas trevas"));
+	_baralhoA.add(new Carta("Paladino da luz", 2, "Treinado para derrotar as for√ßas do MaAaAal"));
+	_baralhoA.shuffle();
+
+
+	_baralhoB.add(new Carta("Goblin vermelho", 1, "Conhecidos por morar em cavernas prÔøΩximas ao deserto"));
+	_baralhoB.add(new Carta("Goblin Verde", 2, "vive nos pantanos"));
+	_baralhoB.add(new Carta("Goblin Cinza", 2, "vive pr√≥ximo a vulc√µes"));
+	_baralhoB.add(new Carta("Goblin b√°rbaro", 2, "ainda n√£o domesticado"));
+	_baralhoB.add(new Carta("Goblin azul", 1, "Conhecidos por morar em cavernas pr√≥ximas ao mar"));
+	_baralhoB.add(new Carta("Guerreiro novato", 2, "Ainda esta em treinamento"));
+	_baralhoB.add(new Carta("Guerreiro orgulhoso", 2, "vermes malditos!"));
+	_baralhoB.add(new Carta("Guerreiro Honrado", 3, "Carrega o nome da fam√≠lia"));
+	_baralhoB.add(new Carta("Guerreirove do deserto", 1, "Conhecidos por morar no deserto"));
+	_baralhoB.add(new Carta("Guerreiro experiente", 4, "Possui anos de experi√™ncia"));
+	_baralhoB.add(new Carta("Paladino negro", 5, "Um paladino corrompido pelas trevas"));
+	_baralhoB.add(new Carta("Paladino da luz", 2, "Treinado para derrotar as for√ßas do MaAaAal"));
+	_baralhoB.shuffle();
+
+
+	_baralhoA.print();
 
 	cout << "It's time to duel" << endl;
 
 	Jogador playerA;
 	Jogador playerB;
 
-	playerA.compraCartas(&_baralho, 4);
-	playerB.compraCartas(&_baralho, 4);
+	playerA.compraCartas(&_baralhoA, 4);
+	playerB.compraCartas(&_baralhoB, 4);
 
-	cout << "Baralho atual" << endl;
+/*	cout << "Baralho atual" << endl;
 	_baralho.print();
-
+*/
 	cout << "Player A" << endl;
-	playerA.adicionaCampo(2);
+	playerA.adicionaCampo(1);
 	playerA.printCampo();
 
 
 	cout << "Player B" << endl;
-	playerB.adicionaCampo(2);
+	playerB.adicionaCampo(1);
 	playerB.printCampo();
 
 
-	//cout << "vocÍ possui: "<< Mao::tamanho_da_mao <<" Carta(s) na m„o"<< endl;
+	//cout << "vocÔøΩ possui: "<< Mao::tamanho_da_mao <<" Carta(s) na mÔøΩo"<< endl;
 	cout << "Fim" << endl;
 	return 0;
 }
