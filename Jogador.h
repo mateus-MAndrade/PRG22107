@@ -9,6 +9,8 @@
 #define JOGADOR_H_
 
 #include "Deck.h"
+#include "Carta.h"
+
 
 class Jogador {
 public:
@@ -21,7 +23,8 @@ public:
 
 	void printMao(){ _mao.print(); }
 	void printCampo(){ _campo.print(); }
-	carta* removeCampo(){_campo.remove(int pos);}
+	//Carta* removeCampo(int pos;)}
+	Deck * retornaCampo(){return &_campo;}
 
 
 private:

@@ -7,15 +7,20 @@
 //============================================================================
 
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 
 #include "Deck.h"
 #include "Jogador.h"
+#include "Mecanicas.h"
 
 int main() {
 
 	Deck _baralhoA;
 	Deck _baralhoB;
+	Mecanicas obj7;
+	Jogador playerA;
+	Jogador playerB;
 
 	_baralhoA.add(new Carta("Goblin vermelho", 1, "Conhecidos por morar em cavernas pr�ximas ao deserto"));
 	_baralhoA.add(new Carta("Goblin Verde", 2, "vive nos pantanos"));
@@ -47,28 +52,39 @@ int main() {
 	_baralhoB.shuffle();
 
 
-	_baralhoA.print();
+	//_baralhoA.print();
 
-	cout << "It's time to duel" << endl;
-
-	Jogador playerA;
-	Jogador playerB;
-
+	cout << "It's time to duel!" << endl;
+	//Inicio do jogo
 	playerA.compraCartas(&_baralhoA, 4);
 	playerB.compraCartas(&_baralhoB, 4);
+	//Jogador 1 começa o jogo
+	playerA.printMao();
+	cout << "Escolha uma carta para colocar em campo" << endl;
+	int x;
+	cin >>  x;
+	playerA.adicionaCampo(x);
+	obj7.limpa();
+	playerB.printMao();
+	cout << "Escolha uma carta para colocar em campo" << endl;
+	cin >>  x;
+	playerB.adicionaCampo(x);
+	obj7.limpa();
 
-/*	cout << "Baralho atual" << endl;
+	/*	cout << "Baralho atual" << endl;
 	_baralho.print();
-*/
-	cout << "Player A" << endl;
-	playerA.adicionaCampo(1);
-	playerA.printCampo();
+	 */
+	//cout << "Player A" << endl;
+	//playerA.adicionaCampo(1);
+	//	playerA.printCampo();
 
 
-	cout << "Player B" << endl;
-	playerB.adicionaCampo(1);
-	playerB.printCampo();
-
+	//cout << "Player B" << endl;
+	//	playerB.adicionaCampo(1);
+	//	playerB.printCampo();
+    //	cout << endl;
+	//cout << endl;
+	obj7.duelo(playerA.retornaCampo(),playerB.retornaCampo(), 1, 1);
 
 	//cout << "voc� possui: "<< Mao::tamanho_da_mao <<" Carta(s) na m�o"<< endl;
 	cout << "Fim" << endl;

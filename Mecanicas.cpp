@@ -21,33 +21,22 @@ Mecanicas::~Mecanicas() {
 	// TODO Auto-generated destructor stub
 }
 
-void Mecanicas::duelo(Deck *_baralhoA, Deck *_baralhoB,int A,int B)
+void Mecanicas::duelo(Deck *_campoA, Deck *_campoB,int A,int B)
 {
-	while(1){
 
-		cout << "Você selecionou a carta " << A << endl;
 		int select;
 		select = A;
-		cout << "Voc� selecionou a carta " << select << endl;
+		Carta * Monstro_A = _campoA->remove(select-1);
 
-		// Remove a carta solicitada da mao e adiciona no campo
-		Carta * tmp = _campo.remove(select-1);
-		if(tmp != 0){
-			Carta * Monstro_A =  _baralhoA->remove();
-			qnt = qnt - 1;
-		} else {
-			cout << "Carta " << select << " inv�lida !!!" << endl;
-		}
-
-
-
+		cout << "Você selecionou a carta " << *Monstro_A << endl;
+		select = B;
+		Carta * Monstro_B = _campoB->remove(select-1);
+		cout << "Voc� selecionou a carta " <<*Monstro_B << endl;
 
 
 
 		//Carta * Monstro_A =  _baralhoA->remove();
-		Carta * Monstro_B =  _baralhoB->remove();
-
-		Monstro_A->retorna_poder();
+		//Carta * Monstro_B =  _baralhoB->remove();
 
 		if (Monstro_A->retorna_poder() > Monstro_B->retorna_poder())
 		{
@@ -62,8 +51,19 @@ void Mecanicas::duelo(Deck *_baralhoA, Deck *_baralhoB,int A,int B)
 			cout << "Ninguem ganhou nem perdeu,muito pelo contr�rio" << endl;
 		}
 
-	};
 
+};
+
+void Mecanicas::limpa()
+{
+	system("cls");
+	/*
+#if defined(_WIN32) || defined(_WIN64)
+    system("cls");
+#else defined(__linux__) || defined(__unix__)
+    system("clear");
+#endif*/
+}
 
 
 
