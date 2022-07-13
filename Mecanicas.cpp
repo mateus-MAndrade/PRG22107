@@ -31,12 +31,7 @@ void Mecanicas::duelo(Deck *_campoA, Deck *_campoB,int A,int B)
 		cout << "Você selecionou a carta " << *Monstro_A << endl;
 		select = B;
 		Carta * Monstro_B = _campoB->remove(select-1);
-		cout << "Voc� selecionou a carta " <<*Monstro_B << endl;
-
-
-
-		//Carta * Monstro_A =  _baralhoA->remove();
-		//Carta * Monstro_B =  _baralhoB->remove();
+		cout << "Você selecionou a carta " <<*Monstro_B << endl;
 
 		if (Monstro_A->retorna_poder() > Monstro_B->retorna_poder())
 		{
@@ -48,21 +43,14 @@ void Mecanicas::duelo(Deck *_campoA, Deck *_campoB,int A,int B)
 		}
 		else
 		{
-			cout << "Ninguem ganhou nem perdeu,muito pelo contr�rio" << endl;
+			cout << "Ninguem ganhou nem perdeu,muito pelo contrário" << endl;
 		}
-
 
 };
 
 void Mecanicas::limpa()
 {
 	system("cls");
-	/*
-#if defined(_WIN32) || defined(_WIN64)
-    system("cls");
-#else defined(__linux__) || defined(__unix__)
-    system("clear");
-#endif*/
 }
 
 
