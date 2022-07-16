@@ -10,6 +10,8 @@
 
 #include "Deck.h"
 
+
+
 class Mecanicas {
 public:
 	Mecanicas();

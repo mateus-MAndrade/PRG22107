@@ -20,7 +20,8 @@ public:
 	void compraCartas(Deck * deck, int qnt = 1);
 
 	void adicionaCampo(int qnt =1);
-
+	void modificaVida(int val){_ponto_de_vida=_ponto_de_vida+val;}
+	int returnaVida(){return _ponto_de_vida;}
 	void printMao(){ _mao.print(); }
 	void printCampo(){ _campo.print(); }
 	//Carta* removeCampo(int pos;)}
@@ -31,6 +32,7 @@ private:
 	Deck _mao;
 	Deck _campo;
 	Deck _morto;
+	int _ponto_de_vida=20;
 
 };
 

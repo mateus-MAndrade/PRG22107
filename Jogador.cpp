@@ -26,20 +26,22 @@ void Jogador::compraCartas(Deck * deck, int qnt){
 void Jogador::adicionaCampo(int qnt){
 	while(qnt != 0){
 		int select;
-		// Imprimir todas as cartas da mão
+		// Imprimir todas as cartas da mï¿½o
+		// Solicitar para o usuï¿½rio o nï¿½mero da carta
+		cout << "Escolha uma carta para colocar no campo: " << endl;
 		_mao.print();
-		// Solicitar para o usuário o número da carta
-		cout << "Escolha uma carta para colocar no campo: ";
 		cin >> select;
-		cout << "Você selecionou a carta " << select << endl;
+		cout <<endl<< "VocÃª selecionou a carta " << select << endl;
 
 		// Remove a carta solicitada da mao e adiciona no campo
 		Carta * tmp = _mao.remove(select-1);
 		if(tmp != 0){
+			cout <<endl<< "carta adicionada no campo "<<endl;
+
 			_campo.add(tmp);
 			qnt = qnt - 1;
 		} else {
-			cout << "Carta " << select << " inválida !!!" << endl;
+			cout << "Carta " << select << " invï¿½lida !!!" << endl;
 		}
 	}
 }
