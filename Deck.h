@@ -27,6 +27,7 @@ public:
 	Carta * remove(int posicao);
 	void shuffle();
 	void print();
+	int tamanho(){return _cartas.size();}
 
 private:
 	vector<Carta*> _cartas;

@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <cstdlib>
+#include <string>
 
 
 using namespace std;
@@ -28,7 +29,8 @@ int main() {
 	Jogador playerA;
 	Jogador playerB;
 	Jogador playerTemp;
-	int m=0,n=0,p,q;
+	int m=0,n=0,p,q,i;
+	char l;
 	_baralhoA.add(new Carta("Goblin vermelho", 1, "Conhecidos por morar em cavernas pr�ximas ao deserto"));
 	_baralhoA.add(new Carta("Goblin Verde", 2, "vive nos pantanos"));
 	_baralhoA.add(new Carta("Goblin Cinza", 2, "vive próximo a vulcões"));
@@ -57,7 +59,7 @@ int main() {
 	_baralhoB.add(new Carta("Paladino negro", 5, "Um paladino corrompido pelas trevas"));
 	_baralhoB.add(new Carta("Paladino da luz", 2, "Treinado para derrotar as forças do MaAaAal"));
 	_baralhoB.shuffle();
-	//_baralhoA.print();
+
 	cout << "It's time to duel!" << endl;
 	//Inicio do jogo
 	playerA.compraCartas(&_baralhoA, 4);
@@ -66,9 +68,7 @@ int main() {
 	while(1)
 	{
 		fflush(stdin);
-
 		//Jogador 1 começa o jogo
-		//	playerA.printMao();
 		cout << "Escolha o modo de jogo:" << endl<<"Digite 1 para jogar contra a CPU;"<<endl<<"Digite 2 para jogar contra outro jogador;"<<endl;
 		cin >>  m;
 
@@ -97,11 +97,13 @@ int main() {
 				{
 				case 1:
 					playerA.printMao();
+
 					break;
 				case 2:
 				{
 					fflush(stdin);
 					playerA.adicionaCampo(1);
+					i++;
 					break;
 				}
 
@@ -117,32 +119,51 @@ int main() {
 				}
 				case 4:
 				{
-					cout << "Monstros do jogador 1:" << endl;
-					playerA.printCampo();
-					cout << endl;
-					cout << "Monstros do jogador 2:" << endl;
-					playerB.printCampo();
-					cout << endl;
-					cout << "Escolha um de seus monstros para batalhar:"
-							<<endl<<"Digite <1> para selecionar 1º monstro: "
-							<<endl<<"Digite <2> para selecionar 2º monstro: "
-							<<endl<<"Digite <3> para selecionar 3º monstro: "
-							<<endl<<"Digite <4> para selecionar 4º monstro: "
-							<<endl;
-					fflush(stdin);
-					cin >>  p;
+					if (playerB.size_campo()!=0)
+					{
+						while(playerB.size_campo()!=0)
+						{
+							cout << "Monstros do jogador 1:" << endl;
+							playerA.printCampo();
+							cout << endl;
+							cout << "Monstros do jogador 2:" << endl;
+							playerB.printCampo();
+							cout << endl;
+							cout << "Escolha um de seus monstros para batalhar:"
+									<<endl<<"Digite <1> para selecionar 1º monstro: "
+									<<endl<<"Digite <2> para selecionar 2º monstro: "
+									<<endl<<"Digite <3> para selecionar 3º monstro: "
+									<<endl<<"Digite <4> para selecionar 4º monstro: "
+									<<endl;
+							fflush(stdin);
+							cin >>  p;
 
-					cout << "Escolha um monstro do seu oponente para batalhar:"
-							<<endl<<"Digite <1> para selecionar 1º monstro: "
-							<<endl<<"Digite <2> para selecionar 2º monstro: "
-							<<endl<<"Digite <3> para selecionar 3º monstro: "
-							<<endl<<"Digite <4> para selecionar 4º monstro: "
-							<<endl;
-					fflush(stdin);
-					cin >>  q;
-					while(sizeof(playerA.retornaCampo()!=0))
-						obj7.duelo(playerA.retornaCampo(),playerB.retornaCampo(), p, q);
-					break;
+							cout << "Escolha um monstro do seu oponente para batalhar:"
+									<<endl<<"Digite <1> para selecionar 1º monstro: "
+									<<endl<<"Digite <2> para selecionar 2º monstro: "
+									<<endl<<"Digite <3> para selecionar 3º monstro: "
+									<<endl<<"Digite <4> para selecionar 4º monstro: "
+									<<endl;
+							fflush(stdin);
+							cin >>  q;
+							obj7.duel(playerA.retornaCampo(),playerB.retornaCampo(),playerA.retornacemiterio(),playerB.retornacemiterio(), p, q);
+							if(playerB.size_campo()!=0)
+							{cout << "Deseja continuar batalhando?"
+							      <<" Digite 'S'para sair ou 'N' para continuar na fase da batalha"
+								  <<endl;
+							cin >> l;
+							if(l=='s'||l=='S' )
+								break;
+							playerB.printCampo();}
+						}
+						break;
+					}
+					else
+					{
+						cout <<"Você não possui monstros em campo para batalhar! "<<endl;
+						break;
+					}
+
 				}
 				case 5:
 					playerTemp=playerA;

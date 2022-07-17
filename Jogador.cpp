@@ -41,8 +41,16 @@ void Jogador::adicionaCampo(int qnt){
 			_campo.add(tmp);
 			qnt = qnt - 1;
 		} else {
-			cout << "Carta " << select << " inv�lida !!!" << endl;
+			cout << "Carta " << select << " inválida !!!" << endl;
 		}
+	}
+}
+
+
+void Jogador::adicionacemiterio(Deck * campo,int qnt){
+	while(qnt != 0){
+			_cemiterio.add(campo->remove());
+			qnt = qnt - 1;
 	}
 }
 
