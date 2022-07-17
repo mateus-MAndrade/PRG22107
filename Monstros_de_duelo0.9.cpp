@@ -29,7 +29,7 @@ int main() {
 	Jogador playerA;
 	Jogador playerB;
 	Jogador playerTemp;
-	int m=0,n=0,p,q,i;
+	int m=0,n=0,p,q,j=1;
 	char l;
 	_baralhoA.add(new Carta("Goblin vermelho", 1, "Conhecidos por morar em cavernas pr�ximas ao deserto"));
 	_baralhoA.add(new Carta("Goblin Verde", 2, "vive nos pantanos"));
@@ -44,7 +44,6 @@ int main() {
 	_baralhoA.add(new Carta("Paladino negro", 5, "Um paladino corrompido pelas trevas"));
 	_baralhoA.add(new Carta("Paladino da luz", 2, "Treinado para derrotar as forças do MaAaAal"));
 	_baralhoA.shuffle();
-
 
 	_baralhoB.add(new Carta("Goblin vermelho", 1, "Conhecidos por morar em cavernas pr�ximas ao deserto"));
 	_baralhoB.add(new Carta("Goblin Verde", 2, "vive nos pantanos"));
@@ -67,21 +66,30 @@ int main() {
 	//Jogador 1 começa o jogo
 	while(1)
 	{
-		fflush(stdin);
-		//Jogador 1 começa o jogo
-		cout << "Escolha o modo de jogo:" << endl<<"Digite 1 para jogar contra a CPU;"<<endl<<"Digite 2 para jogar contra outro jogador;"<<endl;
+		cout << "Escolha o modo de jogo:"
+				<<endl<<"Digite 1 para jogar contra outro jogador;"
+				<<endl<<"Digite 2 para jogar contra a CPU. "<<endl;
 		cin >>  m;
-
+		fflush(stdin);
 		switch(m)
 		{
 		case 1:
 		{
 			cout<<endl<<endl<<endl<<endl;
-			cout << "Você escolheu jogar contra a CPU " << endl;
-			cout << "Boa sorte!" << endl;
+			cout << "Você escolheu jogar contra outro jogador; " << endl;
 			while(1)
 			{
 				fflush(stdin);
+				//Jogador 1 começa o jogo
+				cout << "Turno do jogador: " <<j<< endl
+					 <<"você possui:"<< playerA.retornaVida()<<"ponstos de vida"<<endl;
+
+
+				if(playerA.size_mao()!=4)
+				{
+					playerA.compraCartas(&_baralhoA, 1);
+
+				}
 				cout << "Escolha uma opção:"
 						<<endl<<"Digite <1> para mostrar as cartas na mão novamente;"
 						<<endl<<"Digite <2> para colocar um monstro em campo;"
@@ -97,14 +105,21 @@ int main() {
 				{
 				case 1:
 					playerA.printMao();
-
+					//obj7.tesp(&playerB,&playerA);
 					break;
 				case 2:
 				{
+
 					fflush(stdin);
-					playerA.adicionaCampo(1);
-					i++;
+					if(playerA.size_mao()==4)
+					{
+						playerA.adicionaCampo(1);
+						break;
+					}
+					else
+					{cout << "Você só pode colocar um monstro em campo por turno!"<< endl;
 					break;
+					}
 				}
 
 				case 3:
@@ -138,7 +153,7 @@ int main() {
 							fflush(stdin);
 							cin >>  p;
 
-							cout << "Escolha um monstro do seu oponente para batalhar:"
+							cout    << "Escolha um monstro do seu oponente para batalhar:"
 									<<endl<<"Digite <1> para selecionar 1º monstro: "
 									<<endl<<"Digite <2> para selecionar 2º monstro: "
 									<<endl<<"Digite <3> para selecionar 3º monstro: "
@@ -146,15 +161,18 @@ int main() {
 									<<endl;
 							fflush(stdin);
 							cin >>  q;
-							obj7.duel(playerA.retornaCampo(),playerB.retornaCampo(),playerA.retornacemiterio(),playerB.retornacemiterio(), p, q);
+							obj7.duel(playerA.retornaCampo(),playerB.retornaCampo(),playerA.retornacemiterio(),playerB.retornacemiterio(), p, q,playerA.retornaVida(),playerB.retornaVida());
 							if(playerB.size_campo()!=0)
 							{cout << "Deseja continuar batalhando?"
 							      <<" Digite 'S'para sair ou 'N' para continuar na fase da batalha"
-								  <<endl;
+							      <<endl;
 							cin >> l;
 							if(l=='s'||l=='S' )
 								break;
 							playerB.printCampo();}
+							cout <<"Jogador 1 possui: "<<playerA.retornaVida() <<" Pontos de vida "<< endl
+								 <<"Jogador 2 possui: "<<playerB.retornaVida() <<" Pontos de vida "<< endl;
+
 						}
 						break;
 					}
@@ -169,8 +187,19 @@ int main() {
 					playerTemp=playerA;
 					playerA=playerB;
 					playerB=playerTemp;
+					if(j==1)
+						j=2;
+					else
+						j=1;
 				}
 			}
+		}
+		break;
+		case 2:
+		{
+			cout <<"Função não implementada. "<<endl;
+
+			break;
 		}
 		}
 	}
