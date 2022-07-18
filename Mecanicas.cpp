@@ -6,7 +6,6 @@
  */
 
 #include "Mecanicas.h"
-//#include "Jogador.h"
 #include "Deck.h"
 
 Mecanicas::Mecanicas()
@@ -27,17 +26,19 @@ void Mecanicas::duelo(Jogador* p1,Jogador* p2,int A,int B)
 	int select,pwA,pwB;
 		select = A;
 		Carta * Monstro_A = p1->retornaCampo()->remove(select-1);
-		cout << "VocÃª selecionou a carta " <<*Monstro_A << endl;
+		cout << "Você selecionou a carta " <<*Monstro_A << endl;
 		select = B;
 		Carta * Monstro_B = p2->retornaCampo()->remove(select-1);
-		cout << "VocÃª selecionou a carta " <<*Monstro_B << endl;
-		Monstro_A->mostra_nome();
+		cout << "Você selecionou a carta " <<*Monstro_B << endl;
+		//Monstro_A->mostra_nome();
 		cout <<  endl;
-		Monstro_B->mostra_nome();
+		//Monstro_B->mostra_nome();
 		cout <<  endl;
 		if (Monstro_A->retorna_poder() > Monstro_B->retorna_poder())
 		{
 			cout << "Monstro A Wins!" << endl;
+			cout << "O monstro " <<Monstro_A->retorna_nome()<<" derrotou o monstros "<<Monstro_B->retorna_nome() << endl;
+
 			p1->retornaCampo()->add(Monstro_A);
 			p2->retornacemiterio()->add(Monstro_B);
 			pwA=Monstro_A->retorna_poder();
@@ -48,6 +49,7 @@ void Mecanicas::duelo(Jogador* p1,Jogador* p2,int A,int B)
 		else if((Monstro_A->retorna_poder() < Monstro_B->retorna_poder()))
 		{
 			cout << "Monstro B Wins!" << endl;
+			cout << "O monstro " <<Monstro_B->retorna_nome()<<"derrotou o monstros"<<Monstro_A->retorna_nome() << endl;
 			p2->retornaCampo()->add(Monstro_A);
 			p1->retornacemiterio()->add(Monstro_B);
 			pwA=Monstro_A->retorna_poder();
@@ -57,7 +59,7 @@ void Mecanicas::duelo(Jogador* p1,Jogador* p2,int A,int B)
 		}
 		else
 		{
-			cout << "Ninguem ganhou nem perdeu,muito pelo contrÃ¡rio" << endl;
+			cout << "O monstro " <<Monstro_A->retorna_nome()<<" possui o mesmo poder que o monstro "<<Monstro_B->retorna_nome() << endl;
 			p1->retornacemiterio()->add(Monstro_A);
 			p2->retornacemiterio()->add(Monstro_B);
 		}

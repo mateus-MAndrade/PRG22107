@@ -21,7 +21,6 @@ public:
 	virtual ~Jogador();
 	void compraCartas(Deck * deck, int qnt = 1);
 	void adicionaCampo(int qnt =1);
-	void adicionacemiterio(Deck * campo,int qnt =1);
 	void addgy(Carta * deadmst){_campo.add(deadmst);}
 	void modificaVida(int val){_ponto_de_vida=_ponto_de_vida+val;}
 	int *retornaVida(){return &_ponto_de_vida;}

@@ -13,20 +13,8 @@ Carta::Carta(string n,int a,string m) {
 	_descricao = m;
 }
 
-void Carta::mostra_nome(){
-	cout << "Nome: " << _nome << endl;
-}
-
-void Carta::mostra_poder(){
-	cout << "Poder: " << _poder << endl;
-}
 void Carta::modifica_poder(int b){
 	_poder = b;
-}
-
-
-void Carta::mostra_descricao(){
-	cout << "Descrição: " << _descricao << endl;
 }
 
 Carta::~Carta() {

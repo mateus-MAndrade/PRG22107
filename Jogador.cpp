@@ -45,12 +45,3 @@ void Jogador::adicionaCampo(int qnt){
 	}
 }
 
-
-void Jogador::adicionacemiterio(Deck * campo,int qnt){
-	while(qnt != 0){
-			_cemiterio.add(campo->remove());
-			qnt = qnt - 1;
-	}
-}
-
-

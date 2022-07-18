@@ -32,32 +32,32 @@ int main() {
 	int m=0,n=0,j=1,i=0,b=0,p,q,t=0;
 	char l;
 
-	_baralhoA.add(new Carta("Goblin vermelho", 1, "Conhecidos por morar em cavernas prï¿½ximas ao deserto"));
+	_baralhoA.add(new Carta("Goblin vermelho", 1, "Conhecidos por morar em cavernas próximas ao deserto"));
 	_baralhoA.add(new Carta("Goblin Verde", 2, "vive nos pantanos"));
-	_baralhoA.add(new Carta("Goblin Cinza", 2, "vive prÃ³ximo a vulcÃµes"));
-	_baralhoA.add(new Carta("Goblin bÃ¡rbaro", 2, "ainda nÃ£o domesticado"));
-	_baralhoA.add(new Carta("Goblin azul", 1, "Conhecidos por morar em cavernas prÃ³ximas ao mar"));
+	_baralhoA.add(new Carta("Goblin Cinza", 2, "vive próximo a vulcões"));
+	_baralhoA.add(new Carta("Goblin bárbaro", 2, "ainda nÃ£o domesticado"));
+	_baralhoA.add(new Carta("Goblin azul", 1, "Conhecidos por morar em cavernas próximas ao mar"));
 	_baralhoA.add(new Carta("Guerreiro novato", 2, "Ainda esta em treinamento"));
 	_baralhoA.add(new Carta("Guerreiro orgulhoso", 2, "vermes malditos!"));
-	_baralhoA.add(new Carta("Guerreiro Honrado", 3, "Carrega o nome da famÃ­lia"));
+	_baralhoA.add(new Carta("Guerreiro Honrado", 3, "Carrega o nome da família"));
 	_baralhoA.add(new Carta("Guerreirove do deserto", 1, "Conhecidos por morar no deserto"));
-	_baralhoA.add(new Carta("Guerreiro experiente", 4, "Possui anos de experiÃªncia"));
+	_baralhoA.add(new Carta("Guerreiro experiente", 4, "Possui anos de experiência"));
 	_baralhoA.add(new Carta("Paladino negro", 5, "Um paladino corrompido pelas trevas"));
-	_baralhoA.add(new Carta("Paladino da luz", 2, "Treinado para derrotar as forÃ§as do MaAaAal"));
+	_baralhoA.add(new Carta("Paladino da luz", 2, "Treinado para derrotar as forças do MaAaAal"));
 	_baralhoA.shuffle();
 
-	_baralhoB.add(new Carta("Goblin vermelho", 1, "Conhecidos por morar em cavernas prï¿½ximas ao deserto"));
+	_baralhoB.add(new Carta("Goblin vermelho", 1, "Conhecidos por morar em cavernas próximas ao deserto"));
 	_baralhoB.add(new Carta("Goblin Verde", 2, "vive nos pantanos"));
-	_baralhoB.add(new Carta("Goblin Cinza", 2, "vive prÃ³ximo a vulcÃµes"));
-	_baralhoB.add(new Carta("Goblin bÃ¡rbaro", 2, "ainda nÃ£o domesticado"));
-	_baralhoB.add(new Carta("Goblin azul", 1, "Conhecidos por morar em cavernas prÃ³ximas ao mar"));
+	_baralhoB.add(new Carta("Goblin Cinza", 2, "vive próximo a vulcões"));
+	_baralhoB.add(new Carta("Goblin bárbaro", 2, "ainda nÃ£o domesticado"));
+	_baralhoB.add(new Carta("Goblin azul", 1, "Conhecidos por morar em cavernas próximas ao mar"));
 	_baralhoB.add(new Carta("Guerreiro novato", 2, "Ainda esta em treinamento"));
 	_baralhoB.add(new Carta("Guerreiro orgulhoso", 2, "vermes malditos!"));
-	_baralhoB.add(new Carta("Guerreiro Honrado", 3, "Carrega o nome da famÃ­lia"));
+	_baralhoB.add(new Carta("Guerreiro Honrado", 3, "Carrega o nome da família"));
 	_baralhoB.add(new Carta("Guerreirove do deserto", 1, "Conhecidos por morar no deserto"));
-	_baralhoB.add(new Carta("Guerreiro experiente", 4, "Possui anos de experiÃªncia"));
+	_baralhoB.add(new Carta("Guerreiro experiente", 4, "Possui anos de experiência"));
 	_baralhoB.add(new Carta("Paladino negro", 5, "Um paladino corrompido pelas trevas"));
-	_baralhoB.add(new Carta("Paladino da luz", 2, "Treinado para derrotar as forÃ§as do MaAaAal"));
+	_baralhoB.add(new Carta("Paladino da luz", 2, "Treinado para derrotar as forças do MaAaAal"));
 	_baralhoB.shuffle();
 
 	cout << "It's time to duel!" << endl;
@@ -77,12 +77,12 @@ int main() {
 		case 1:
 		{
 			cout<<endl<<endl<<endl<<endl;
-			cout << "VocÃª escolheu jogar contra outro jogador; " << endl;
+			cout << "Você escolheu jogar contra outro jogador; " << endl;
 			while(1)
 			{
 				fflush(stdin);
 				cout <<"Turno do jogador: " <<j<< endl
-						<<"vocÃª possui: "<< * playerA.retornaVida()<<" pontos de vida"<<endl;
+						<<"você possui: "<< * playerA.retornaVida()<<" pontos de vida"<<endl;
 
 
 				if(playerA.size_mao()!=4&& b==0)
@@ -90,15 +90,15 @@ int main() {
 					playerA.compraCartas(&_baralhoA, 1);
 					b++;
 				}
-				cout << "Escolha uma opÃ§Ã£o:"
-						<<endl<<"Digite <1> para mostrar as cartas na mÃ£o novamente;"
+				cout << "Escolha uma opção:"
+						<<endl<<"Digite <1> para mostrar as cartas na mão novamente;"
 						<<endl<<"Digite <2> para colocar um monstro em campo;"
 						<<endl<<"Digite <3> para visualizar o campo;"
 						<<endl<<"Digite <4> para ir para a fase de batalha;"
 						<<endl<<"Digite <5> para finalizar o seu turno."
 						<<endl;
 				cin >>  n;
-				cout << "vocÃª escolheu a opÃ§Ã£o: " <<n<< endl;
+				cout << "você escolheu a opção: " <<n<< endl;
 
 				switch(n)
 				{
@@ -116,7 +116,7 @@ int main() {
 					}
 					else
 					{
-						cout << "VocÃª sÃ³ pode colocar um monstro em campo por turno!"<< endl;
+						cout << "Você só pode colocar um monstro em campo por turno!"<< endl;
 						break;
 					}
 				}
@@ -134,7 +134,7 @@ int main() {
 					}
 					else
 					{
-						cout << "VocÃª jÃ¡ possui 5 monstros em campo!" << endl;
+						cout << "Você já possui 5 monstros em campo!" << endl;
 						break;
 					}
 				}
@@ -152,10 +152,10 @@ int main() {
 								cout << endl;
 
 								cout << "Escolha um de seus monstros para batalhar;"
-										<<endl<<"Digite <1> para selecionar 1Âº monstro; "
-										<<endl<<"Digite <2> para selecionar 2Âº monstro; "
-										<<endl<<"Digite <3> para selecionar 3Âº monstro; "
-										<<endl<<"Digite <4> para selecionar 4Âº monstro; "
+										<<endl<<"Digite <1> para selecionar 1º monstro; "
+										<<endl<<"Digite <2> para selecionar 2º monstro; "
+										<<endl<<"Digite <3> para selecionar 3º monstro; "
+										<<endl<<"Digite <4> para selecionar 4º monstro; "
 										<<endl<<"Digite <0> para sair da batalha. "
 										<<endl;
 								fflush(stdin);
@@ -166,10 +166,10 @@ int main() {
 								playerB.printCampo();
 								cout << endl;
 								cout    << "Escolha um monstro do seu oponente para batalhar;"
-										<<endl<<"Digite <1> para selecionar 1Âº monstro; "
-										<<endl<<"Digite <2> para selecionar 2Âº monstro; "
-										<<endl<<"Digite <3> para selecionar 3Âº monstro; "
-										<<endl<<"Digite <4> para selecionar 4Âº monstro; "
+										<<endl<<"Digite <1> para selecionar 1º monstro; "
+										<<endl<<"Digite <2> para selecionar 2º monstro; "
+										<<endl<<"Digite <3> para selecionar 3º monstro; "
+										<<endl<<"Digite <4> para selecionar 4º monstro; "
 										<<endl<<"Digite <0> para sair da batalha. "
 										<<endl;
 								fflush(stdin);
@@ -195,14 +195,14 @@ int main() {
 						}
 						else
 						{
-							cout <<"VocÃª nÃ£o possui monstros em campo para batalhar! "<<endl;
+							cout <<"Você não possui monstros em campo para batalhar! "<<endl;
 							break;
 						}
 					}
 					else
 					{
-						cout <<"VocÃª nÃ£o pode batalhar no turno 1! "<<endl;
-					break;}
+						cout <<"Você não pode batalhar no turno 1! "<<endl;
+						break;}
 				}
 				case 5:
 					i=0;
@@ -221,7 +221,7 @@ int main() {
 		break;
 		case 2:
 		{
-			cout <<"FunÃ§Ã£o nÃ£o implementada. "<<endl;
+			cout <<"Função não implementada. "<<endl;
 
 			break;
 		}
