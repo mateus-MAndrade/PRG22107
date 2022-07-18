@@ -33,7 +33,7 @@ Carta* Deck::remove() {
 	return currentCard;
 }
 
-Carta* Deck::remove(int index) {
+Carta* Deck::remove(long long unsigned int index) {
 	if(index >= _cartas.size())
 
 		return 0;

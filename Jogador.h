@@ -31,13 +31,10 @@ public:
 	Deck * retornacemiterio(){return &_cemiterio;}
 	int size_campo(){return _campo.tamanho();}
 	int size_mao(){return _mao.tamanho();}
-
 private:
 	Deck _mao;
 	Deck _campo;
 	Deck _cemiterio;
 	int _ponto_de_vida=20;
-
 };
-
 #endif /* JOGADOR_H_ */

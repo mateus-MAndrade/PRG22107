@@ -32,7 +32,6 @@ private:
 	string  _nome;
 	int 	_poder;
 	string  _descricao;
-
 };
 
 #endif /* CARTA_H_ */

@@ -15,6 +15,7 @@
 class Mecanicas {
 public:
 	Mecanicas();
+	void menu(Jogador * playerA,Jogador * playerB,Deck * baralhoA,Deck * baralhoB,Mecanicas * obj7);
 	void duelo(Jogador * playerA,Jogador * playerB,int A,int B);
 	void limpa();
 	virtual ~Mecanicas();
