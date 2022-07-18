@@ -29,7 +29,7 @@ int main() {
 	Jogador playerA;
 	Jogador playerB;
 	Jogador playerTemp;
-	int m=0,n=0,j=1,i=0,b=0,p,q;
+	int m=0,n=0,j=1,i=0,b=0,p,q,t=0;
 	char l;
 
 	_baralhoA.add(new Carta("Goblin vermelho", 1, "Conhecidos por morar em cavernas pr�ximas ao deserto"));
@@ -81,7 +81,7 @@ int main() {
 			while(1)
 			{
 				fflush(stdin);
-				cout << "Turno do jogador: " <<j<< endl
+				cout <<"Turno do jogador: " <<j<< endl
 						<<"você possui: "<< * playerA.retornaVida()<<" pontos de vida"<<endl;
 
 
@@ -98,7 +98,6 @@ int main() {
 						<<endl<<"Digite <5> para finalizar o seu turno."
 						<<endl;
 				cin >>  n;
-
 				cout << "você escolheu a opção: " <<n<< endl;
 
 				switch(n)
@@ -141,14 +140,14 @@ int main() {
 				}
 				case 4:
 				{
-					if(i==0)
+					if(i==0 && t>0)
 					{
-						if (playerB.size_campo()!=0)
+						if (playerA.size_campo()!=0)
 						{
 							while(playerB.size_campo()!=0)
 							{
-								i++;
-								cout << "Monstros do jogador 1:" << endl;
+								i=1;
+								cout << "Monstros no campo do jogador 1:" << endl;
 								playerA.printCampo();
 								cout << endl;
 
@@ -163,7 +162,7 @@ int main() {
 								cin >>  p;
 								if(p==0)
 									break;
-								cout << "Monstros do jogador 2:" << endl;
+								cout << "Monstros no campo do jogador 2:" << endl;
 								playerB.printCampo();
 								cout << endl;
 								cout    << "Escolha um monstro do seu oponente para batalhar;"
@@ -179,7 +178,7 @@ int main() {
 								{
 									break;
 								}
-								obj7.duel(playerA.retornaCampo(),playerB.retornaCampo(),playerA.retornacemiterio(),playerB.retornacemiterio(), p, q,playerA.retornaVida(),playerB.retornaVida(),&playerA,&playerB);
+								obj7.duelo(&playerA, &playerB, p, q);
 								if(playerB.size_campo()!=0)
 								{cout << "Deseja continuar batalhando?"
 									<<" Digite 'S'para sair ou 'N' para continuar na fase da batalha"
@@ -201,12 +200,14 @@ int main() {
 						}
 					}
 					else
-						cout <<"Você já batalhou esse turno! "<<endl;
-
+					{
+						cout <<"Você não pode batalhar no turno 1! "<<endl;
+					break;}
 				}
 				case 5:
 					i=0;
 					b=0;
+					t++;
 					playerTemp=playerA;
 					playerA=playerB;
 					playerB=playerTemp;

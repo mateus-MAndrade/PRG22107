@@ -28,7 +28,6 @@ public:
 	void printVida(){cout << _ponto_de_vida;}
 	void printMao(){ _mao.print(); }
 	void printCampo(){ _campo.print(); }
-	//Carta* removeCampo(int pos;)}
 	Deck * retornaCampo(){return &_campo;}
 	Deck * retornacemiterio(){return &_cemiterio;}
 	int size_campo(){return _campo.tamanho();}

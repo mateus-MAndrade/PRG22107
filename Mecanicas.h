@@ -15,7 +15,6 @@
 class Mecanicas {
 public:
 	Mecanicas();
-	void duel(Deck *_campoA, Deck *_campoB,Deck *gy_a,Deck *gy_b,int A,int B,int* vidaA,int *vidaB,Jogador* merda1,Jogador* merda2);
 	void duelo(Jogador * playerA,Jogador * playerB,int A,int B);
 	void limpa();
 	virtual ~Mecanicas();

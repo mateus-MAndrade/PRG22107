@@ -17,6 +17,7 @@ class Carta {
 public:
 	Carta(string n, int a, string m);
 	void mostra_nome();
+	string retorna_nome(){return _nome;}
 	void mostra_poder();
 	int  retorna_poder();
 	void modifica_poder(int b);
