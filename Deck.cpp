@@ -35,6 +35,7 @@ Carta* Deck::remove() {
 
 Carta* Deck::remove(int index) {
 	if(index >= _cartas.size())
+
 		return 0;
 
 	Carta *currentCard = _cartas[index];

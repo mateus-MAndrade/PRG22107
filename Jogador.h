@@ -24,7 +24,8 @@ public:
 	void adicionacemiterio(Deck * campo,int qnt =1);
 	void addgy(Carta * deadmst){_campo.add(deadmst);}
 	void modificaVida(int val){_ponto_de_vida=_ponto_de_vida+val;}
-	int retornaVida(){return _ponto_de_vida;}
+	int *retornaVida(){return &_ponto_de_vida;}
+	void printVida(){cout << _ponto_de_vida;}
 	void printMao(){ _mao.print(); }
 	void printCampo(){ _campo.print(); }
 	//Carta* removeCampo(int pos;)}
