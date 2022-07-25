@@ -13,6 +13,7 @@ Deck::Deck() {
 }
 
 Deck::~Deck() {
+
 	// TODO Auto-generated destructor stub
 }
 
@@ -35,12 +36,9 @@ Carta* Deck::remove() {
 
 Carta* Deck::remove(long long unsigned int index) {
 	if(index >= _cartas.size())
-
 		return 0;
-
 	Carta *currentCard = _cartas[index];
 		_cartas.erase(_cartas.begin()+index);
-
 	return currentCard;
 }
 

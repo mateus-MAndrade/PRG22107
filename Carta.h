@@ -17,8 +17,8 @@ class Carta {
 public:
 	Carta(string n, int a, string m);
 	string retorna_nome(){return _nome;}
-	int  retorna_poder();
-	void modifica_poder(int b);
+	int  retorna_poder(){return _poder;}
+	void modifica_poder(int b){_poder = b;}
 	virtual ~Carta();
 
 	friend ostream& operator<<(ostream &output, const Carta &c){

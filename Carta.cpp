@@ -13,16 +13,9 @@ Carta::Carta(string n,int a,string m) {
 	_descricao = m;
 }
 
-void Carta::modifica_poder(int b){
-	_poder = b;
-}
 
 Carta::~Carta() {
 	// TODO Auto-generated destructor stub
 }
 
 
-int  Carta::retorna_poder()
-{
-	return _poder;
-}

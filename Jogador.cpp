@@ -6,6 +6,7 @@
  */
 
 #include "Jogador.h"
+#include "Carta.h"
 
 Jogador::Jogador() {
 	// TODO Auto-generated constructor stub
@@ -26,7 +27,7 @@ void Jogador::compraCartas(Deck * deck, int qnt){
 void Jogador::adicionaCampo(int qnt){
 	while(qnt != 0){
 		int select;
-		// Solicitar para o usu�rio o n�mero da carta
+		// Solicitar para o usuario o numero da carta
 		cout << "Escolha uma carta para colocar no campo: " << endl;
 		_mao.print();
 		cin >> select;
@@ -45,3 +46,9 @@ void Jogador::adicionaCampo(int qnt){
 	}
 }
 
+
+void Jogador::mnsvoltacampo()
+{
+	while(_atacou.tamanho()!=0)
+	_campo.add(_atacou.remove());
+}
